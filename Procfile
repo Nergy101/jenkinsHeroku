@@ -1,2 +1,1 @@
-# Only listen on http; disable ajp and https
-web: java -jar jenkins.war --httpPort=$PORT --ajp13Port=-1 --httpsPort=-1
+web: java $JAVA_OPTS -cp "target/dependency/*" webapp.runner.launch.Main --port $PORT target/*.war
